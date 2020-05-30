@@ -47,33 +47,6 @@ public class UserManager {
         }
     }
 
-    public List<User> getUser() throws SQLException {
-        Statement statement = connection.createStatement();
-        ResultSet resultSet = statement.executeQuery("SELECT * FROM user");
-        List<User> users = new LinkedList<>();
-        while (resultSet.next()) {
-            int anInt = resultSet.getInt(1);
-            User user = new User();
-            user.setId(anInt);
-            user.setName(resultSet.getString("name"));
-            user.setSurname(resultSet.getString("surname"));
-            user.setPhoneNumber(resultSet.getString("phone_number"));
-            user.setAge(resultSet.getInt("age"));
-            user.setEmail(resultSet.getString("email"));
-            user.setPassword(resultSet.getString("password"));
-            users.add(user);
-            System.out.println("User was added");
-        }
-        return users;
-    }
-
-    public void deleteUserById(int id) throws SQLException {
-        PreparedStatement preparedStatement = connection.prepareStatement("DELETE  FROM user WHERE id=?");
-        preparedStatement.setInt(1, id);
-        preparedStatement.executeUpdate();
-
-    }
-
     public User loginUsre(String phoneNumber, String password) throws SQLException {
         Statement statement = connection.createStatement();
         ResultSet resultSet = statement.executeQuery("SELECT * FROM user");
