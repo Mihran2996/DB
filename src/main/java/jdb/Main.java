@@ -40,7 +40,7 @@ public class Main implements Comand {
                     loginUsre();
                     break;
                 case REGISTER:
-                    regisdterUser();
+                    registerUser();
                     break;
                 default:
                     System.out.println("Wrong comand! please try again");
@@ -51,7 +51,7 @@ public class Main implements Comand {
         }
     }
 
-    private static void regisdterUser() throws SQLException {
+    private static void registerUser() throws SQLException {
         System.out.println("Please input user`(name,surname,age,phoneNumber,email,password)");
         String userData = scanner.nextLine();
         String[] userArr = userData.split(",");
