@@ -99,7 +99,7 @@ public class Main implements Comand {
                     userManager.printAllMyTodo(currentUser.getId());
                     break;
                 case MY_IN_PROGRESS_LIST:
-                    userManager.printInStatusTodo(Status.valueOf("IN_PROGRESS"));
+                    userManager.printTodoByStatus(Status.valueOf("IN_PROGRESS"));
                     break;
                 case MY_FINISHED_LIST:
                     userManager.printTodoByStatus(Status.valueOf("FINISHED"));
