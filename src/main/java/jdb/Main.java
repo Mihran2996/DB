@@ -44,6 +44,7 @@ public class Main implements Comand {
                     break;
                 default:
                     System.out.println("Wrong comand! please try again");
+                    break;
             }
 
 
@@ -114,6 +115,7 @@ public class Main implements Comand {
                     break;
                 default:
                     System.out.println("Wrong comand");
+                    break;
             }
         }
     }
