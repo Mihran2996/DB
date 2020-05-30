@@ -102,6 +102,7 @@ public class UserManager {
         preparedStatement.executeUpdate();
         System.out.println("Todo was added");
     }
+    
 
     public void printAllMyTodo(int userId) throws SQLException {
         ResultSet resultSet;
