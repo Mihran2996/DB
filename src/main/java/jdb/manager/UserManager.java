@@ -1,23 +1,16 @@
 package jdb.manager;
 
-import com.sun.org.apache.regexp.internal.RE;
+
 import jdb.Status;
 import jdb.db.DBCConnection;
 import jdb.model.Todo;
 import jdb.model.User;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import sun.applet.AppletResourceLoader;
 
 import java.sql.*;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Arrays;
+
 import java.util.LinkedList;
 import java.util.List;
 
-import static java.sql.Date.valueOf;
 
 public class UserManager {
     Connection connection;
@@ -130,7 +123,7 @@ public class UserManager {
         printTodo(todos);
     }
 
-    public void printInStatusTodo(Status status) throws SQLException {
+    public void printTodoByStatus(Status status) throws SQLException {
         ResultSet resultSet;
         PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM todo WHERE status=?");
         preparedStatement.setString(1, String.valueOf(status));
